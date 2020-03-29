@@ -6,7 +6,7 @@ module.exports = {
     async index(request, response){
         
         const ongs = await connection('ongs').select('*');
-        console.log('teste');
+        console.log('teste2');
         return `{ "Resposta modificada" : "teste 1 "}, ${response.json(ongs)}`;
         
     },
