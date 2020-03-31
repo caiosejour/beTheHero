@@ -46,7 +46,7 @@ export default function Logon(){
 
                 <section className="form">
                     <form onSubmit={handleLogin}>
-                        <h1>Faça seu logon!</h1>
+                        <h1>ONG Login</h1>
                         <input 
                             placeholder ="Sua ID" 
                             value = {id}
@@ -60,7 +60,7 @@ export default function Logon(){
                     </form>
                 </section>
 
-                <div className="img">
+                <div className="imgMiddle">
                     <img src={heroesImg} alt="Heroes"/>
                 </div>
 
@@ -71,6 +71,10 @@ export default function Logon(){
                 </aside>
             
             </div>
+
+            <footer>
+                    Todos os direitos reservados por Be The Hero. 2020 - 2022.
+            </footer>
 
         </div>
     );

@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
+    height: 100%;
 
     display: flex;
     align-items: center;
@@ -16,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 80px;
+    padding: 80px 30px;
 
 }
 
@@ -41,7 +42,7 @@
     
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     
 }
@@ -49,36 +50,31 @@
 
 .logon-container section.form{
 
-    widows: 100%;
-    max-width: 350px;
+    width: 100%;
+    max-width: 250px;
     margin: 0 30px;
-
-}
-
-.logon-container section.form form{
-
 
 }
 
 .logon-container section.form form h1{
 
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 32px;
 
 }
 
-.siteContentContainer .img{
-    margin:0 200px;
-    width: 400px;
+.siteContentContainer .imgMiddle img{
+    margin:0 100px;
+    width: 450px;
 }
 
 .logon-container aside{
     display: flex;
-    align-items: center;
+    text-align: right;
     flex-direction: column;
     margin-top: 20px;
-    width: 100%;
     max-width: 350px;
+    margin-right: 73px;
 }
 .logon-container aside img{
     width: 150px;
@@ -87,4 +83,20 @@
 .logon-container aside h1{
     text-align: center;
     margin-top: 20px;
+    width: fit-content;
 }
+
+.logon-container footer{
+
+    display: flex;
+    height: 100%;
+    text-align: center;
+    color: #41414d;
+    font-size: 12px;
+    text-decoration: none;
+    vertical-align: bottom;
+    margin-top: 120px;    
+    margin-bottom: 10px;
+}
+
+
