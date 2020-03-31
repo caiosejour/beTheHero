@@ -1,31 +1,102 @@
 .logon-container{
     width: 100%;
-    max-width: 1120px;
-    height: 100vh;
+    max-width: 1500px;
     margin: 0 auto;
+    height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
 
 }
+
+.logon-container header{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 30px;
+
+}
+
+.logon-container header button{
+
+    width: 250px;
+    color: #e02041;
+    background-color: #fff;
+    border: 1px solid #dcdce6;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    margin: 0;
+
+}
+
+.logon-container header button svg{
+    margin-right: 8px;
+}
+
+.logon-container .siteContentContainer {
+    
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
 
 .logon-container section.form{
 
-    widows: 100%;
-    max-width: 350px;
-    margin-right: 30px;
-
-}
-
-.logon-container section.form form{
-    margin-top: 100px;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 30px;
 
 }
 
 .logon-container section.form form h1{
 
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 32px;
 
 }
+
+.siteContentContainer .imgMiddle img{
+    margin:0 100px;
+    width: 450px;
+}
+
+.logon-container aside{
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    margin-top: 20px;
+    max-width: 350px;
+    margin-right: 73px;
+}
+.logon-container aside img{
+    width: 150px;
+}
+
+.logon-container aside h1{
+    text-align: center;
+    margin-top: 20px;
+    width: fit-content;
+}
+
+.logon-container footer{
+
+    display: flex;
+    height: 100%;
+    text-align: center;
+    color: #41414d;
+    font-size: 12px;
+    text-decoration: none;
+    vertical-align: bottom;
+    margin-top: 120px;    
+    margin-bottom: 10px;
+}
+
+

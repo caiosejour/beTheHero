@@ -52,7 +52,8 @@ form textarea{
     font-weight: 700;
     font-size: 18px;
     margin-top: 16px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     line-height: 60px;
