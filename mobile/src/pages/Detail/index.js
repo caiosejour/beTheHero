@@ -1,6 +1,7 @@
 import React from 'react';
+
 import { Feather } from '@expo/vector-icons';
-import { useNavigation, useRoute } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, Image, Text, TouchableOpacity, Linking } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
 
@@ -49,7 +50,7 @@ export default function Detail(){
             <View style={styles.incident}>
 
                 <Text style={[styles.incidentProperty, { marginTop: 0 }]}>ONG:</Text>
-    <Text style={styles.incidentValue}>{incident.name} de {incident.city} / {incident.uf}</Text>
+                <Text style={styles.incidentValue}>{incident.name} de {incident.city} / {incident.uf}</Text>
 
                 <Text style={styles.incidentProperty}>CASO:</Text>
                 <Text style={styles.incidentValue}>{incident.title}</Text>
@@ -59,7 +60,7 @@ export default function Detail(){
                             {Intl.NumberFormat('pt-BR', {
                                 style: 'currency', 
                                 currency:'BRL'
-                                }).format(incident.value)}
+                            }).format(incident.value)}
                 </Text>
 
             </View>
