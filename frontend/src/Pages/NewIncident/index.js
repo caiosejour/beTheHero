@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
 
 import api from '../../services/api'
@@ -8,7 +8,7 @@ import './styles.css';
 
 export default function NewIncident(){
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -34,7 +34,7 @@ export default function NewIncident(){
                 }
             });
             alert(`Caso cadastrado. ID do caso: ${response.data.id}`);
-            history.push('/profile');
+            navigate('/profile');
 
         } catch(error){
             alert('Erro ao cadastrar caso, tente novamente.');

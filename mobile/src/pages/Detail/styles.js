@@ -3,16 +3,23 @@ import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container:{
-        flex:1,
+        flex: 1,
         paddingHorizontal: 24,
         paddingTop: Constants.statusBarHeight + 20,
+        backgroundColor: '#f0f0f5',
     },
-   
+
     header:{
         flexDirection: 'row',
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom:20,
+        marginBottom: 20,
+    },
+
+    logo:{
+        width: 64,
+        height: 64,
+        resizeMode: 'contain',
     },
 
     incident: {
@@ -50,10 +57,9 @@ export default StyleSheet.create({
     },
 
     heroDescription:{
-        marginTop:16,
+        marginTop: 16,
         fontSize: 15,
         color: '#737380',
-
     },
 
     actions: {
@@ -61,7 +67,6 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-
     },
 
     action:{

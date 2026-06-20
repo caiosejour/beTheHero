@@ -1,12 +1,13 @@
-import React from 'react';
-
-import 'intl';
-import 'intl/locale-data/jsonp/pt-BR';
+import React, { useEffect } from 'react';
+import * as SplashScreen from 'expo-splash-screen';
 import Routes from './src/routes';
 
-export default function App() {
-  return (
+SplashScreen.preventAutoHideAsync();
 
-    <Routes />
-  );
+export default function App() {
+  useEffect(() => {
+    SplashScreen.hideAsync();
+  }, []);
+
+  return <Routes />;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, Image, Text, TouchableOpacity, StatusBar} from 'react-native';
+import { View, FlatList, Image, Text, TouchableOpacity, StatusBar } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -7,7 +7,7 @@ import { Feather } from '@expo/vector-icons';
 
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
-import api from '../../services/api'
+import api from '../../services/api';
 
 export default function Incidents(){
 
@@ -19,46 +19,46 @@ export default function Incidents(){
     const [loading, setLoading] = useState(false);
 
     function navigateToDetail(incident){
-        navigation.navigate('Detail',{ incident });
+        navigation.navigate('Detail', { incident });
     }
 
     async function loadIncidents(){
 
-        if(loading ){
+        if(loading){
             return;
         }
 
-        if(total>0 && incidents.length == total){
+        if(total > 0 && incidents.length === total){
             return;
         }
 
         setLoading(true);
 
-        const response = await api.get('incidents',{
-            params: { page }
-        });
-        setIncidents([... incidents, ...response.data]);
-        setTotal(response.headers['x-total-count']);
-
-        setPage(page + 1);
-        setLoading(false);
+        try {
+            const response = await api.get('incidents', {
+                params: { page }
+            });
+            setIncidents([...incidents, ...response.data]);
+            setTotal(response.headers['x-total-count']);
+            setPage(page + 1);
+        } catch (error) {
+            console.error('Erro ao carregar incidentes:', error.message);
+        } finally {
+            setLoading(false);
+        }
 
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         loadIncidents();
     }, []);
 
     return(
-
         <View style={styles.container}>
-            
-            <StatusBar 
-                barStyle="dark-content"
-            />
+            <StatusBar barStyle="dark-content" />
 
             <View style={styles.header}>
-                <Image source={logoImg} />
+                <Image source={logoImg} style={styles.logo} />
                 <Text style={styles.headerText}>
                     Total de <Text style={styles.headerTextBold}>{total} casos</Text>.
                 </Text>
@@ -67,12 +67,12 @@ export default function Incidents(){
             <Text style={styles.title}>Bem vindo!</Text>
             <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia.</Text>
 
-            <FlatList 
+            <FlatList
                 onEndReached={loadIncidents}
                 onEndReachedThreshold={0.2}
                 data={incidents}
                 style={styles.incidentList}
-                keyExtractor={incidents.id}
+                keyExtractor={(item) => String(item.id)}
                 showsVerticalScrollIndicator={false}
                 renderItem={({ item: incident }) => (
                     <View style={styles.incident}>
@@ -85,12 +85,12 @@ export default function Incidents(){
                         <Text style={styles.incidentProperty}>VALOR:</Text>
                         <Text style={styles.incidentValue}>
                             {Intl.NumberFormat('pt-BR', {
-                                style: 'currency', 
-                                currency:'BRL'
-                                }).format(incident.value)}
+                                style: 'currency',
+                                currency: 'BRL'
+                            }).format(incident.value)}
                         </Text>
 
-                        <TouchableOpacity 
+                        <TouchableOpacity
                             style={styles.detailsButton}
                             onPress={() => navigateToDetail(incident)}
                         >
@@ -98,9 +98,8 @@ export default function Incidents(){
                             <Feather name="arrow-right" size={16} color="#E02041" />
                         </TouchableOpacity>
                     </View>
-
                 )}
-            />       
+            />
         </View>
     );
 }
